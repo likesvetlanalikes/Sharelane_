@@ -11,6 +11,10 @@ public class BaseTest {
 
     WebDriver driver;
     String BASE_URL = "https://www.sharelane.com/";
+    String zipCodeInputLocator = "zip_code";
+    String continueButtonLocator = "[value=Continue]";
+    String registerButtonLocator = "[value=Register]";
+    String errorMessageLocator = "[class='error_message']";
 
     @BeforeMethod
     public void setUp() {

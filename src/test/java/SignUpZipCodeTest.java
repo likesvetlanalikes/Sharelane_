@@ -8,10 +8,6 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class SignUpZipCodeTest extends BaseTest {
-    String zipCodeInputLocator = "zip_code";
-    String continueButtonLocator = "[value=Continue]";
-    String registerButtonLocator = "[value=Register]";
-    String errorMessageLocator = "[class='error_message']";
 
 
     @Test
