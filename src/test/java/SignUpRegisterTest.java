@@ -18,9 +18,9 @@ import org.testng.annotations.Test;
         @Test
         public void registerUserWithValeDate() {
             driver.get("https://www.sharelane.com/cgi-bin/register.py?page=1&zip_code=12345");
-            driver.findElement(By.name("first_name")).sendKeys("Vova");
-            driver.findElement(By.name("last_name")).sendKeys("Ivanov");
-            driver.findElement(By.name("email")).sendKeys("Ivanov@mail.com");
+            driver.findElement(By.name("first_name")).sendKeys("Olga");
+            driver.findElement(By.name("last_name")).sendKeys("Krautsova");
+            driver.findElement(By.name("email")).sendKeys("Olga@mail.com");
             driver.findElement(By.name("password1")).sendKeys("12345");
             driver.findElement(By.name("password2")).sendKeys("12345");
             driver.findElement(By.cssSelector("[value='Register']")).click();
@@ -33,11 +33,11 @@ import org.testng.annotations.Test;
         @Test
         public void inputValidDataIntoRegistrationForm() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("88888");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyacheslau");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath("//span[@class='confirmation_message']")).getText();
             Assert.assertEquals(text1, "Account is created!", "Пользователь не зарегистрировался");
@@ -47,11 +47,11 @@ import org.testng.annotations.Test;
         @Test
         public void inputUppercaseLatinLettersInFirstNameFieldAndLastName() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("DIMA");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("PETROV");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("88888");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("VYACHRSLAU");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath("//span[@class='confirmation_message']")).getText();
             Assert.assertEquals(text1, "Account is created!", "Пользователь не зарегистрировался");
@@ -61,11 +61,11 @@ import org.testng.annotations.Test;
         @Test
         public void inputLatinLettersAndDashesInFirstNameField() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima-Dmitry");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("88888");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyachelau-Vyachik");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vych@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath("//span[@class='confirmation_message']")).getText();
             Assert.assertEquals(text1, "Account is created!", "Пользователь не зарегистрировался");
@@ -75,11 +75,11 @@ import org.testng.annotations.Test;
         @Test
         public void inputLatinLettersAndDashesInLastNameField() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov-Sidorov");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("88888");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyachelau");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov-Sidorov");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath("//span[@class='confirmation_message']")).getText();
             Assert.assertEquals(text1, "Account is created!", "Пользователь не зарегистрировался");
@@ -104,10 +104,10 @@ import org.testng.annotations.Test;
         public void leaveFirstNameFieldEmpty() {
             driver.get(url);
             driver.findElement(By.name(firstnameInputLocator)).sendKeys("");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("88888");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
@@ -118,10 +118,10 @@ import org.testng.annotations.Test;
         public void inputSpaceInFirstNameField() {
             driver.get(url);
             driver.findElement(By.name(firstnameInputLocator)).sendKeys(" ");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("88888");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
@@ -132,11 +132,11 @@ import org.testng.annotations.Test;
         @Test
         public void inputCyrillicLettersInFirstNameField() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Дима");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("88888");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Вячеслав");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
@@ -146,11 +146,11 @@ import org.testng.annotations.Test;
         @Test
         public void leaveLastNameFieldEmpty() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyacheslav");
             driver.findElement(By.name(lastnameInputLocator)).sendKeys("");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("88888");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
@@ -160,11 +160,11 @@ import org.testng.annotations.Test;
         @Test
         public void inputSpaceInLastNameField() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyacheslav");
             driver.findElement(By.name(lastnameInputLocator)).sendKeys(" ");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("88888");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
@@ -174,11 +174,11 @@ import org.testng.annotations.Test;
         @Test
         public void inputCyrillicLettersInLastNameField() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Петров");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("88888");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyacheslav");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Кравцов");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
@@ -188,11 +188,11 @@ import org.testng.annotations.Test;
         @Test
         public void leaveEmailFieldEmpty() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyacheslav");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
             driver.findElement(By.name(emailInputLocator)).sendKeys("");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("88888");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
@@ -202,11 +202,11 @@ import org.testng.annotations.Test;
         @Test
         public void inputIncorrectDataInEmailField() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@222.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("88888");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyacheslav");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@3562.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
@@ -215,11 +215,11 @@ import org.testng.annotations.Test;
         @Test
         public void input_c_CyrillicLetterInEmailAddress() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("ssssсcc@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("88888");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyacheslav");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyaсh@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
@@ -228,11 +228,11 @@ import org.testng.annotations.Test;
         @Test
         public void inputEmailAddressWithoutNameInEmailField() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyacheslav");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
             driver.findElement(By.name(emailInputLocator)).sendKeys("@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("88888");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
@@ -241,11 +241,11 @@ import org.testng.annotations.Test;
         @Test
         public void inputSpaceInEmailField() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyacheslav");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
             driver.findElement(By.name(emailInputLocator)).sendKeys(" ");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("88888");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("555555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
@@ -255,11 +255,11 @@ import org.testng.annotations.Test;
         @Test
         public void inputSpaceAndNumbersInPasswordField() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys(" 88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys(" 88888");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyacheslav");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys(" 55555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys(" 55555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
@@ -269,11 +269,11 @@ import org.testng.annotations.Test;
         @Test
         public void inputSpaceInPasswordField() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyacheslav");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@gmail.ru");
             driver.findElement(By.xpath(passwordInputLocator)).sendKeys(" ");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("88888");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
@@ -283,11 +283,11 @@ import org.testng.annotations.Test;
         @Test
         public void inputWordsWithSpaceInPasswordField() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("ddd kkkk");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("ddd kkkk");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyacheslav");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("555 55");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("555 55");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
@@ -297,11 +297,11 @@ import org.testng.annotations.Test;
         @Test
         public void inputSpaceAfterPasswordInPasswordField() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888 ");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("88888 ");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyacheslav");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555 ");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555 ");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
@@ -311,11 +311,11 @@ import org.testng.annotations.Test;
         @Test
         public void inputCyrillicLettersAndSymbolsInPasswordField() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("Петров!№%");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("Петров!№%");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyacheslav");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("Кравцов!№%");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("Крввцов!№%");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
@@ -325,10 +325,10 @@ import org.testng.annotations.Test;
         @Test
         public void leaveConfirmPasswordFieldEmpty() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyacheslav");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555");
             driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
@@ -339,11 +339,11 @@ import org.testng.annotations.Test;
         @Test
         public void inputDifferentPasswordInConfirmPasswordField() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("888888");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyacheslav");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
@@ -353,11 +353,11 @@ import org.testng.annotations.Test;
         @Test
         public void inputSpaceBeforePasswordInConfirmPasswordField() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys(" 88888");
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyacheslav");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys(" 55555");
             driver.findElement(By.cssSelector(registerButtonLocator)).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
@@ -367,12 +367,12 @@ import org.testng.annotations.Test;
         @Test
         public void inputSpaceAfterPasswordInConfirmPasswordField() {
             driver.get(url);
-            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Dima");
-            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Petrov");
-            driver.findElement(By.name(emailInputLocator)).sendKeys("sssss@gmail.ru");
-            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("88888");
-            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("88888 ");
-            driver.findElement(By.cssSelector(registerButtonLocator)).click();
+            driver.findElement(By.name(firstnameInputLocator)).sendKeys("Vyacheslav");
+            driver.findElement(By.name(lastnameInputLocator)).sendKeys("Krautsov");
+            driver.findElement(By.name(emailInputLocator)).sendKeys("vyach@gmail.ru");
+            driver.findElement(By.xpath(passwordInputLocator)).sendKeys("55555");
+            driver.findElement(By.xpath(confirmPasswordInputLocator)).sendKeys("55555 ");
+            By.cssSelector(registerButtonLocator).findElement(driver).click();
             String text1 = driver.findElement(By.xpath(errorMessageLocator)).getText();
             Assert.assertEquals(text1, "Oops, error on page. Some of your fields have invalid data or email was previously used", "Пользователь не зарегистрировался");
 
